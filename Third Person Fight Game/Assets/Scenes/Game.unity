@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 7b936960a5f0ac840b8964abec0f279e, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: 5563f93294e751b4f9dba921ee39d65e, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 477cc4148fad3449482a3bc3178594e2, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -528,3 +528,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2feece8e5f743354f8df60d6586388b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4354449585147702845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4354449585147702839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fd4e2bdd3f90664eb4f3a436dcd01e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &4354449585147702846
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4354449585147702839}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 4de158dbb85b3a247973d70facda319b, type: 3}
+  m_Controller: {fileID: 9100000, guid: 02627e1e5a6c0a74c85cdc55e4beb794, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
