@@ -6,20 +6,23 @@ public class InputManager : MonoBehaviour
 {
     PlayerControls playerControls;      // Action class
     AnimatorManager animatorManager;
+    PlayerLocomotion playerLocomotion;
 
-    public Vector2 movementInput;
-    public Vector2 cameraInput;
+    [SerializeField] private Vector2 movementInput;
+    [SerializeField] private Vector2 cameraInput;
 
     public float cameraInputX;
     public float cameraInputY;
 
-    private float moveAmount;
+    public float moveAmount;
     public float verticalInput;
     public float horizontalInput;
+    public bool sprintingInput;
 
     private void Awake()
     {
         animatorManager = GetComponent<AnimatorManager>();
+        playerLocomotion = GetComponent<PlayerLocomotion>();
     }
 
     private void OnEnable()
@@ -31,6 +34,9 @@ public class InputManager : MonoBehaviour
             // when we hit wasd record all values to movementInput
             playerControls.PlayerMovement.Movement.performed += i => movementInput = i.ReadValue<Vector2>();
             playerControls.PlayerMovement.Camera.performed += i => cameraInput = i.ReadValue<Vector2>();
+
+            playerControls.PlayerActions.SptringingButton.performed += i => sprintingInput = true;
+            playerControls.PlayerActions.SptringingButton.canceled += i => sprintingInput = false;
         }
         playerControls.Enable();
     }
@@ -43,10 +49,11 @@ public class InputManager : MonoBehaviour
     public void HandleAllInputs()
     {
         HandleMovementInput();
+        HandleSprintingInput();
         //Handlejumpinput
         //handleactioninput
     }
-    public void HandleMovementInput()
+    private void HandleMovementInput()
     {
         verticalInput = movementInput.y;
         horizontalInput = movementInput.x;
@@ -55,6 +62,18 @@ public class InputManager : MonoBehaviour
         cameraInputY = cameraInput.y;
 
         moveAmount = Mathf.Clamp01(Mathf.Abs(horizontalInput) + Mathf.Abs(verticalInput));
-        animatorManager.UpdateAnimatorValues(0, moveAmount);
+        animatorManager.UpdateAnimatorValues(0, moveAmount, playerLocomotion.isSprinting);
+    }
+
+    private void HandleSprintingInput()
+    {
+        if (sprintingInput && moveAmount > .5f)
+        {
+            playerLocomotion.isSprinting = true;
+        }
+        else
+        {
+            playerLocomotion.isSprinting = false;
+        }
     }
 }

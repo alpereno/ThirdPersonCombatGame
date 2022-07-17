@@ -16,7 +16,7 @@ public class AnimatorManager : MonoBehaviour
     }
 
     // this func. should be called from input manager
-    public void UpdateAnimatorValues(float horizontalMovement, float verticalMovement)
+    public void UpdateAnimatorValues(float horizontalMovement, float verticalMovement, bool isSprinting)
     {
         float snappedHorizontal;
         float snappedVertical;
@@ -65,6 +65,12 @@ public class AnimatorManager : MonoBehaviour
             snappedVertical = 0;
         }
         #endregion
+
+        if (isSprinting)
+        {
+            snappedHorizontal = horizontalMovement;
+            snappedVertical = 2;
+        }
 
         animator.SetFloat(horizontal, snappedHorizontal, .1f, Time.deltaTime);
         animator.SetFloat(vertical, snappedVertical, .1f, Time.deltaTime);

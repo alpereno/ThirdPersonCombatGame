@@ -94,7 +94,7 @@
                 {
                     "name": "Up",
                     "id": "52b29569-2cdb-4ffe-90c8-6ad61f5d9a3e",
-                    "path": "<Gamepad>/leftStick/up",
+                    "path": "<Joystick>/stick/up",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -105,7 +105,7 @@
                 {
                     "name": "Down",
                     "id": "ca8bf082-b602-4d2d-b3c5-a3b5de06814f",
-                    "path": "<Gamepad>/leftStick/down",
+                    "path": "<Joystick>/stick/down",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -116,7 +116,7 @@
                 {
                     "name": "Left",
                     "id": "496557f3-403b-4aee-b041-e1c67dd1b1f2",
-                    "path": "<Gamepad>/leftStick/left",
+                    "path": "<Joystick>/stick/left",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -127,7 +127,7 @@
                 {
                     "name": "Right",
                     "id": "c24e6c35-3436-45cf-b22e-44ee18eb6882",
-                    "path": "<Gamepad>/leftStick/right",
+                    "path": "<Joystick>/stick/right",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -160,7 +160,7 @@
                 {
                     "name": "up",
                     "id": "6bab55f4-73c7-4b20-ad20-8cfd40b7c54e",
-                    "path": "<Gamepad>/rightStick/up",
+                    "path": "<Joystick>/stick/up",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -171,7 +171,7 @@
                 {
                     "name": "down",
                     "id": "f6522920-3b26-4097-8c1d-b6850cc40c1e",
-                    "path": "<Gamepad>/rightStick/down",
+                    "path": "<Joystick>/stick/down",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -182,7 +182,7 @@
                 {
                     "name": "left",
                     "id": "41d226f7-7582-4a4f-b279-fe7383683ccb",
-                    "path": "<Gamepad>/rightStick/left",
+                    "path": "<Joystick>/stick/left",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -193,13 +193,52 @@
                 {
                     "name": "right",
                     "id": "cb9d9862-3d2d-4384-839b-64398afff530",
-                    "path": "<Gamepad>/rightStick/right",
+                    "path": "<Joystick>/stick/right",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Camera",
                     "isComposite": false,
                     "isPartOfComposite": true
+                }
+            ]
+        },
+        {
+            "name": "Player Actions",
+            "id": "61c5cbb6-7d85-462d-9a3f-dba351367b3b",
+            "actions": [
+                {
+                    "name": "SptringingButton",
+                    "type": "Button",
+                    "id": "977e36a9-e0bf-4bff-995c-f086a06e573a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "58167178-3bc6-4aa6-9017-056ee130c2ad",
+                    "path": "<HID::Microntek              USB Joystick          >/button7",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SptringingButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "903a853b-f678-410a-88b7-d1a93c3eec91",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SptringingButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
